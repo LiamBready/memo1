@@ -46,8 +46,14 @@ metadata:
 
 ## Personal
 - **Style:** "Typo master seeking for sport-beer balance with an aspiration to see new places and try local food"
-- **Interests:** Sports, beer, travel, local food
+- **Relationship:** Engaged (fiancée), no children yet
+- **Sports:** Football (past — knee injuries), now: badminton, tennis, padel, running, hiking
+- **Other interests:** Beer, travel, local food
 - **Personality:** Direct, curious, open-source enthusiast
+
+## GitHub accounts (important)
+- **Simply007** — Ondrej's personal GitHub (219 repos, real account)
+- **LiamBready** — ondrejbot's GitHub account (used so Ondrej can identify bot actions)
 
 ## Working with ondrejbot
 - **Style:** Short, concise, direct — no fluff, lead with the answer
