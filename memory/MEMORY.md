@@ -4,3 +4,4 @@
 - [Communication style](feedback_communication_style.md) — short, direct, no fluff, lead with the answer
 - [Project: Nanoclaw](project_nanoclaw.md) — building ondrejbot as a proactive digital twin for personal use
 - [Telegram URL formatting](feedback_telegram_urls.md) — wrap URLs with underscores in backticks, Telegram strips them
+- [Project: Workshop](project_workshop.md) — Web Summer Camp 2026, July 2, Opatija — proactive digital twin workshop, several pending items
