@@ -21,7 +21,7 @@ ZeroClaw is a Rust-based autonomous AI agent runtime distributed as a single sta
 | UI / comms | Telegram-native (cards, reactions, questions) | 30+ channels via config — Telegram, Discord, Matrix, email, webhooks, CLI |
 | Memory | CLAUDE.local.md (plain Markdown, human-readable) | Embedded configurable storage |
 | LLM coupling | Tightly coupled to Anthropic Claude SDK | Provider-agnostic — Anthropic, OpenAI, Ollama, 20+ providers; fallback chains |
-| Resource footprint | ~100–200 MB per container + Node runtime | ~5–15 MB binary, runs on Raspberry Pi-class hardware |
+| Resource footprint | ~100–200 MB per container + Node runtime | 3.4 MB binary, runs on Raspberry Pi-class hardware |
 | Air-gap suitability | ❌ Needs Telegram API + Docker | ✅ Fully offline capable with local LLMs |
 | Pricing | Self-hosted costs only | Free binary; pay only for LLM API usage |
 | Community | Small but growing | 32k GitHub stars, active |
