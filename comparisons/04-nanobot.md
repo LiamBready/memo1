@@ -1,13 +1,13 @@
 # NanoClaw vs Nanobot
 
 > **Type:** Open-source Python AI agent framework (MCP-native, minimal)
-> **Source:** [github.com/hku-ai/nanobot](https://github.com/hku-ai/nanobot) · [composio.dev](https://composio.dev/content/openclaw-alternatives)
+> **Source:** [github.com/HKUDS/nanobot](https://github.com/HKUDS/nanobot) · [nanobot.club](https://nanobot.club/)
 
 ---
 
 ## What is Nanobot?
 
-Nanobot is a minimal (~4,000 lines) open-source Python agent framework from the Data Intelligence Lab at the University of Hong Kong (HKUDS), released February 2026 and growing to over 9,000 GitHub stars. It is MCP-native from the ground up, with a focus on readability, ease of extension, and keeping the codebase small enough to actually understand without a week of archaeology.
+Nanobot is an ultra-lightweight open-source personal AI agent from the Data Intelligence Lab at the University of Hong Kong (HKUDS), released February 2, 2026. It delivers core agent functionality in ~4,000 lines of Python — MCP-native from the ground up, supporting 11+ LLM providers (OpenRouter, Anthropic, OpenAI, DeepSeek, Gemini, and more) and 8+ messaging platforms including Telegram, Discord, WhatsApp, Slack, and email.
 
 ---
 
@@ -15,38 +15,38 @@ Nanobot is a minimal (~4,000 lines) open-source Python agent framework from the 
 
 | Dimension | NanoClaw | Nanobot |
 |-----------|----------|---------|
-| Language & Runtime | Node.js + Anthropic Claude SDK, needs Docker | Pure Python, no external SDK dependency |
-| Communication / UI | Telegram-native | Internal message bus; optional HTTP/WebSocket adapters |
-| Memory persistence | CLAUDE.local.md — editable, Git-friendly Markdown | In-memory JSON store with optional file-based persistence plugin |
-| Proactivity | schedule_task with bash pre-checks; dynamic sub-agent spawning | Basic task scheduler; no built-in sub-agent spawning |
+| Language & runtime | Node.js / TypeScript, needs Docker | Pure Python, no external SDK dependency |
+| License | MIT | MIT |
+| Communication / UI | Telegram-native (cards, reactions, questions) | 8+ platforms: Telegram, Discord, WhatsApp, Slack, email, Feishu, DingTalk |
+| Memory persistence | CLAUDE.local.md — editable, Git-friendly Markdown | Built-in memory; configurable persistence |
+| Proactivity | schedule_task with bash pre-checks; sub-agent spawning | Automation management built-in; task scheduling |
 | Credential handling | OneCLI transparent proxy — secrets never in agent code | Manual injection via env vars or config files |
-| Resource footprint | One Docker container per agent | Single-process lightweight agents, no container overhead |
-| LLM coupling | Tightly coupled to Claude/Anthropic SDK | SDK-agnostic; only standard Python libraries |
-| Codebase size | Larger opinionated harness | ~4k LOC — readable and auditable in an afternoon |
-| Community | Small but growing | Academic-origin; 9k GitHub stars, sparse docs |
+| LLM support | Claude only (Anthropic SDK) | 11+ providers including OpenRouter, DeepSeek, Gemini, Ollama |
+| Codebase size | Larger opinionated harness (Node.js) | ~4,000 lines Python — readable in an afternoon |
+| Resource footprint | ~100–200 MB per container | Single Python process; no container overhead |
 
 ---
 
 ## Where NanoClaw Wins
 
-- Rich interaction toolkit: send_card, ask_user_question, add_reaction ready-made
-- Advanced proactive features and sub-agent spawning out of the box
-- OneCLI proxy for zero-secret-in-code security
-- Version-controllable Markdown memory — diff, branch, audit with Git
-- Docker isolation enforced at OS level, not application level
+- OneCLI credential proxy — secrets never in agent code; no manual env var management
+- Version-controlled Markdown memory auditable by any team member
+- send_card, ask_user_question, add_reaction interactive primitives ready-made
+- Docker-per-agent provides strong OS-level security isolation
+- Admin CLI (ncl) + MCP server support + install_packages for structured extensibility
 
 ## Where Nanobot Wins
 
-- **Lightweight deployment** — ordinary Python processes; no per-agent Docker overhead; large fleets are far cheaper
-- **SDK independence** — MCP-native and LLM-agnostic; swap models via config, not code
-- **Readability** — ~4k LOC core you can audit in an afternoon (NanoClaw's harness adds more)
-- **Lower barrier for non-Telegram teams** — generic HTTP/WebSocket adapters fit any environment
-- **Minimal dependencies** — faster startup, simpler debugging, easier CI
+- **LLM flexibility** — 11+ providers including free options (DeepSeek, local Ollama); not locked to Anthropic pricing
+- **Lightweight deployment** — Python process, no Docker overhead; large fleets are far cheaper
+- **Broader channel support** — 8+ messaging platforms natively including non-Western apps (Feishu, DingTalk, QQ)
+- **Readability** — ~4k LOC Python core you can understand in an afternoon
+- **MCP-native** — MCP support is first-class, not bolted on
 
 ---
 
 ## Verdict
 
-**NanoClaw** for feature-rich proactive agents with secure credential handling in Docker/Telegram environments. **Nanobot** when you want a lightweight, MCP-native, SDK-agnostic baseline you can read cover-to-cover and deploy at scale without container overhead.
+**NanoClaw** for feature-rich proactive agents with secure credential handling and Telegram-first interaction, where Claude is the preferred model. **Nanobot** when you want a lightweight, multi-provider, MCP-native baseline you can deploy at scale without container overhead — or when your audience is on non-Western messaging platforms.
 
-*Sources: [github.com/hku-ai/nanobot](https://github.com/hku-ai/nanobot) · [composio.dev](https://composio.dev/content/openclaw-alternatives) · [aimastery.page](https://www.aimastery.page/articles/openclaw-alternatives)*
+*Sources: [github.com/HKUDS/nanobot](https://github.com/HKUDS/nanobot) · [nanobot.club](https://nanobot.club/) · [BrightCoding](https://www.blog.brightcoding.dev/2026/05/10/nanobot-the-revolutionary-lightweight-ai-assistant)*
