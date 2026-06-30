@@ -21,7 +21,7 @@ LangGraph is a graph-based workflow orchestration library from the LangChain tea
 | Deployment | One Docker container per agent | Library in your application — no container enforced |
 | UI / interaction | Telegram-native (cards, questions, reactions) | No built-in UI — LangServe, Streamlit, or custom |
 | Memory / state | CLAUDE.local.md — editable Markdown, Git-versionable | User-chosen storage: in-memory, DB, Redis, etc. |
-| Monitoring & debugging | No visual dashboard; Telegram logs + ncl CLI | LangSmith + LangStudio — visual graph debugger, tracing |
+| Monitoring & debugging | No visual dashboard; Telegram logs + ncl CLI | LangSmith + LangGraph Studio — visual graph debugger, tracing |
 | Resource overhead | ~100–200 MB per container — heavy at scale | Lightweight library — overhead is your host runtime only |
 | Community | Small, growing | Very large, active; extensive docs and tutorials |
 | Credential handling | OneCLI transparent proxy | Developer-managed env vars or secrets manager |
@@ -40,7 +40,7 @@ LangGraph is a graph-based workflow orchestration library from the LangChain tea
 ## Where LangGraph Wins
 
 - **Model flexibility** — works with any LLM, not locked to Claude pricing or availability
-- **Production tooling** — LangSmith tracing, LangStudio graph visualisation, LangServe API deployment
+- **Production tooling** — LangSmith tracing, LangGraph Studio graph visualisation, LangServe API deployment
 - **Lower resource overhead** — library model vs container-per-agent; far cheaper at scale
 - **Explicit control flow** — graph-based design makes complex workflows visually inspectable and debuggable
 - **TypeScript + Python** — LangGraph supports both; if your team is Python-native, it fits naturally
