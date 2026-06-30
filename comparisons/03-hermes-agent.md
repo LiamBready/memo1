@@ -1,13 +1,13 @@
 # NanoClaw vs Hermes Agent
 
-> **Type:** Research-oriented self-improving AI agent framework
-> **Source:** [github.com/nousresearch/hermes-agent](https://github.com/nousresearch/hermes-agent) · [composio.dev](https://composio.dev/content/hermes-agent-alternatives)
+> **Type:** Self-improving open-source AI agent framework
+> **Source:** [github.com/NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) · [hermes-agent.nousresearch.com/docs](https://hermes-agent.nousresearch.com/docs/)
 
 ---
 
 ## What is Hermes Agent?
 
-Hermes Agent is a project from Nous Research that builds self-improving agents capable of updating their own prompts and strategies based on task outcomes. Released February 2026, it quickly became notable for its built-in reflection module: after completing a task, it extracts a reusable skill and writes it to disk. The next time a similar task arrives, the agent retrieves that skill and runs it without an API call. It targets experimental and exploratory use cases rather than production-ready personal assistant deployments.
+Hermes Agent is Nous Research's MIT-licensed open-source AI agent framework, released February 25, 2026. It became the fastest-growing agent framework of 2026, reaching 95,600 GitHub stars in seven weeks. Its defining feature is a self-improvement loop: after completing a task, a reflection module extracts a reusable skill and writes it to disk. Future similar tasks pull that skill without an API call, with internal benchmarks showing a 40% reduction in tokens and time for repeat tasks after 20+ accumulated skills.
 
 ---
 
@@ -15,37 +15,38 @@ Hermes Agent is a project from Nous Research that builds self-improving agents c
 
 | Dimension | NanoClaw | Hermes Agent |
 |-----------|----------|--------------|
-| Core focus | General-purpose proactive agent framework | Self-improving agents with automated prompt/strategy adaptation |
-| LLM coupling | Tightly coupled to Anthropic Claude SDK | LLM-agnostic research stack; no provider lock-in |
-| Deployment | One Docker container per agent | Single process; containerization optional |
-| UI / interaction | Telegram-centric (cards, reactions, questions) | CLI-driven or custom interfaces; no mandated chat platform |
-| Memory | CLAUDE.local.md — editable, versionable Markdown | Internal learning state in logs; not user-editable |
-| Proactivity | schedule_task with bash pre-checks; sub-agent spawning | Proactive via learning loop; adapts future prompts from past results |
-| Resource usage | Container overhead per agent | Single process; lighter baseline footprint |
-| Maturity | Small but growing community | Research prototype; docs mainly papers and README |
+| Language & runtime | Node.js / TypeScript, needs Docker | Python; runs as a persistent daemon |
+| License | MIT | MIT |
+| Core focus | General-purpose proactive agent framework | Self-improving agents with automated skill accumulation |
+| LLM coupling | Tightly coupled to Anthropic Claude SDK | LLM-agnostic — Anthropic, OpenAI, local, 16+ integrations |
+| Deployment | One Docker container per agent | Single persistent process; containerization optional |
+| UI / interaction | Telegram-native (cards, reactions, questions) | 16+ messaging platforms; no prescribed primary channel |
+| Memory | CLAUDE.local.md — editable, versionable Markdown | Three-layer memory + self-written skills in ~/.hermes/skills/ |
+| Proactivity | schedule_task with bash pre-checks; sub-agent spawning | Scheduled cron tasks; proactivity via skill-driven efficiency gains |
+| Community | Small, growing | 95k+ GitHub stars; fastest-growing agent framework of 2026 |
 
 ---
 
 ## Where NanoClaw Wins
 
 - Editable, version-controllable Markdown memory any team member can audit and change directly
-- Rich built-in Telegram UI — cards, interactive questions, emoji reactions — out of the box
 - OneCLI credential proxy keeps secrets completely out of agent code
-- Admin CLI and install_packages for operational extensibility without rebuilding images
-- MIT license with Docker isolation for reproducible, compliance-friendly deployments
+- Admin CLI (ncl) and install_packages for operational extensibility
+- Docker isolation provides strong per-agent security boundaries
+- send_card, ask_user_question, add_reaction primitives ready out of the box
 
 ## Where Hermes Agent Wins
 
-- **Self-improvement loop** — the agent refines its own behaviour without manual prompt engineering; skills accumulate over time
-- LLM-agnostic — swap models without rewriting logic
-- Lower resource footprint for single-agent experiments
-- Research-grade adaptation techniques for exploring novel agent behaviours
-- No Telegram dependency — fits any custom frontend
+- **Self-improvement loop** — agent refines its own skills from experience; repeat tasks get 40% cheaper over time
+- **LLM-agnostic** — swap models without rewriting logic; not locked to Anthropic pricing or availability
+- **Much larger community** — 95k stars vs NanoClaw's growing but modest audience
+- **Broader channel support** — 16+ messaging platforms natively
+- **No container overhead** — daemon-based, lighter for single deployments
 
 ---
 
 ## Verdict
 
-**NanoClaw** for production-lean, extensible deployment with transparent ops and a ready-made Telegram UI. **Hermes Agent** for research experiments where self-modifying prompts and autonomous behavioural adaptation matter more than operational polish.
+**NanoClaw** for production-lean, extensible deployment with transparent ops, Telegram-first UI, and Claude at the core. **Hermes Agent** if you want an agent that genuinely improves itself through use and aren't locked to a single LLM provider.
 
-*Sources: [github.com/nousresearch/hermes-agent](https://github.com/nousresearch/hermes-agent) · [composio.dev](https://composio.dev/content/hermes-agent-alternatives) · [gradually.ai](https://www.gradually.ai/en/hermes-agent-alternative/)*
+*Sources: [github.com/NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) · [hermes-agent.nousresearch.com](https://hermes-agent.nousresearch.com/docs/) · [tokenmix.ai review](https://tokenmix.ai/blog/hermes-agent-review-self-improving-open-source-2026)*
