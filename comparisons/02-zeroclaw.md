@@ -1,13 +1,13 @@
 # NanoClaw vs ZeroClaw
 
 > **Type:** Open-source AI agent framework (Rust, privacy-first, edge-focused)
-> **Source:** [github.com/zeroclaw/zeroclaw](https://github.com/zeroclaw/zeroclaw) · [lushbinary.com comparison](https://lushbinary.com/blog/zeroclaw-openclaw-personal-ai-agents-compared-2026/)
+> **Source:** [github.com/zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) · [zeroclaw.bot](https://zeroclaw.bot/)
 
 ---
 
 ## What is ZeroClaw?
 
-ZeroClaw is a privacy-first, Rust-based agent framework distributed as a single static binary. Designed for edge devices, air-gapped environments, and scenarios where any cloud or external dependency is off-limits — deterministic execution, minimal attack surface.
+ZeroClaw is a Rust-based autonomous AI agent runtime distributed as a single static binary. It targets edge devices, air-gapped environments, and scenarios where any cloud dependency is off-limits. Licensed Apache-2.0, it supports 30+ messaging channels, 20+ LLM providers (Anthropic, OpenAI, Ollama, any OpenAI-compatible endpoint), and provider fallback chains — all via config. As of June 2026 it has 32,100 GitHub stars.
 
 ---
 
@@ -15,36 +15,39 @@ ZeroClaw is a privacy-first, Rust-based agent framework distributed as a single 
 
 | Dimension | NanoClaw | ZeroClaw |
 |-----------|----------|----------|
-| Language & Runtime | Node.js + Anthropic SDK, needs Docker | Rust — single static binary, zero runtime deps |
+| Language & runtime | Node.js / TypeScript, needs Docker | Rust — single static binary, zero runtime deps |
+| License | MIT | Apache-2.0 |
 | Deployment | One Docker container per agent | Single binary, runs directly on host OS |
-| UI / Comms | Telegram-native | No built-in chat UI — CLI, HTTP, file triggers |
-| Memory | CLAUDE.local.md (plain Markdown, human-readable) | Embedded SQLite or custom encrypted storage |
-| LLM Lock-in | Coupled to Anthropic Claude SDK | Provider-agnostic — local llama.cpp, any OpenAI-compatible endpoint |
-| Resource footprint | ~100–200 MB per container | ~5–15 MB binary, runs on Raspberry Pi-class hardware |
-| Air-gap suitability | ❌ Needs Telegram API + Docker Hub | ✅ Fully offline capable |
-| Community | Small but growing | Niche privacy/embedded community |
+| UI / comms | Telegram-native (cards, reactions, questions) | 30+ channels via config — Telegram, Discord, Matrix, email, webhooks, CLI |
+| Memory | CLAUDE.local.md (plain Markdown, human-readable) | Embedded configurable storage |
+| LLM coupling | Tightly coupled to Anthropic Claude SDK | Provider-agnostic — Anthropic, OpenAI, Ollama, 20+ providers; fallback chains |
+| Resource footprint | ~100–200 MB per container + Node runtime | ~5–15 MB binary, runs on Raspberry Pi-class hardware |
+| Air-gap suitability | ❌ Needs Telegram API + Docker | ✅ Fully offline capable with local LLMs |
+| Pricing | Self-hosted costs only | Free binary; pay only for LLM API usage |
+| Community | Small but growing | 32k GitHub stars, active |
 
 ---
 
 ## Where NanoClaw Wins
 
-- Telegram-native UI — zero custom frontend needed
-- Rich built-ins: OneCLI proxy, schedule_task, sub-agent spawning, MCP support ship out of the box
-- Skills / SKILL.md plugin system — extend in plain Markdown
-- Interactive primitives: send_card, ask_user_question, add_reaction are ready-made
+- Telegram-native UI with send_card, ask_user_question, add_reaction built in — zero custom frontend
+- OneCLI credential proxy — secrets never in agent code, no vault setup required
+- Version-controlled Markdown memory auditable by any team member
+- MCP server support + install_packages for extending capabilities
+- Admin CLI (ncl) for live config changes with approval flow
 
 ## Where ZeroClaw Wins
 
-- True offline / air-gap — no Telegram, no Docker Hub, no external anything
-- Minimal footprint — single binary on constrained hardware where Docker is too heavy
-- LLM provider flexibility — swap models via config, no code changes, no OpenRouter workaround needed
-- Rust memory safety — smaller attack surface from day one
-- No Telegram requirement — critical for enterprise, government, or regulated environments where Telegram is blocked
+- **True offline / air-gap** — works with local Ollama, no Telegram, no Docker Hub, no external anything
+- **Minimal footprint** — 3.4 MB binary boots in under 10ms, runs on constrained hardware
+- **LLM provider flexibility** — 20+ providers, fallback chains, swap via config not code
+- **No container overhead** — share one process across agents; far cheaper at scale
+- **30+ channel support** — broader than NanoClaw out of the box (Discord, Matrix, email, voice, webhooks)
 
 ---
 
 ## Verdict
 
-**NanoClaw** for teams in Telegram doing cloud or hybrid deployment with a Node.js comfort zone. **ZeroClaw** for edge hardware, air-gapped deployments, or anywhere "no external dependencies" is a hard requirement.
+**NanoClaw** for Telegram-centric proactive agents with Node.js and Claude at the core, where Docker is already part of the stack. **ZeroClaw** for edge hardware, air-gapped deployments, multi-channel breadth, or anywhere "no runtime dependencies" is a hard requirement.
 
-*Sources: [lushbinary.com](https://lushbinary.com/blog/zeroclaw-openclaw-personal-ai-agents-compared-2026/) · [composio.dev](https://composio.dev/content/openclaw-alternatives) · [aimultiple.com](https://aimultiple.com/openclaw-alternatives)*
+*Sources: [github.com/zeroclaw-labs/zeroclaw](https://github.com/zeroclaw-labs/zeroclaw) · [lushbinary.com](https://lushbinary.com/blog/zeroclaw-openclaw-personal-ai-agents-compared-2026/) · [DEV Community](https://dev.to/wonderlab/open-source-project-of-the-day-part-26-zeroclaw-full-rust-autonomous-ai-assistant-7e0)*
