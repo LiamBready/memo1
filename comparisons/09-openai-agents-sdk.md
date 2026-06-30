@@ -1,0 +1,53 @@
+# NanoClaw vs OpenAI Agents SDK
+
+> **Type:** Official developer SDK for building OpenAI-powered agents
+> **Source:** [github.com/openai/openai-agents-python](https://github.com/openai/openai-agents-python) · [platform.openai.com/docs/guides/agents](https://platform.openai.com/docs/guides/agents)
+
+---
+
+## What is the OpenAI Agents SDK?
+
+OpenAI's official Python and TypeScript SDK for building agents with tool use, handoffs between agents, and guardrails. It provides a clean API that integrates tightly with OpenAI's model ecosystem (GPT-4o, o1, etc.) and is actively maintained by OpenAI. Recent updates added sandboxing, durable execution, and configurable memory.
+
+---
+
+## The Honest Comparison
+
+| Dimension | NanoClaw | OpenAI Agents SDK |
+|-----------|----------|-------------------|
+| Model coupling | Claude only (Anthropic SDK) | OpenAI models only (GPT-4o, o1, etc.) |
+| Deployment | One Docker container per agent — isolated but resource-heavy | Lightweight processes — no mandatory containers |
+| UI / interaction | Telegram-native | No built-in UI — full freedom to build any interface |
+| Memory persistence | CLAUDE.local.md — editable Markdown, Git-friendly | No built-in persistence — must implement your own |
+| Credential handling | OneCLI transparent proxy — secrets never in agent code | Developer-managed env vars/vaults; no built-in proxy |
+| Proactivity | schedule_task with bash pre-checks; dynamic sub-agent spawning | Reactive by default; proactivity requires custom implementation |
+| Built-in guardrails | None | Built-in input/output validation guardrails |
+| Handoffs | Sub-agent spawning via create_agent | Native agent handoff primitives in the SDK |
+| Community & docs | Small, maturing | Backed by OpenAI; large community, polished docs |
+| Resource overhead | Heavy — container per agent | Minimal — agents share host process |
+
+---
+
+## Where NanoClaw Wins
+
+- Self-hostable with zero vendor lock-in on infrastructure
+- Persistent editable memory out of the box — no storage layer to build
+- OneCLI proxy eliminates credential management boilerplate entirely
+- Proactive scheduling with bash pre-checks ships by default
+- Docker isolation provides strong per-agent security boundaries
+
+## Where OpenAI Agents SDK Wins
+
+- **Latest OpenAI capabilities** — direct access to function calling, vision, structured outputs, o1 reasoning as they ship
+- **Built-in guardrails and handoffs** — first-class primitives for safe multi-agent routing; NanoClaw has neither
+- **No container overhead** — vastly cheaper and simpler at scale
+- **UI freedom** — not Telegram-locked; integrate into web apps, Slack, mobile, anything
+- **Larger ecosystem and polish** — OpenAI's docs and community are among the best in the space
+
+---
+
+## Verdict
+
+**NanoClaw** for self-hosted, privacy-conscious deployments with proactive scheduling and zero-secret-in-code credentials, where Claude is the preferred model. **OpenAI Agents SDK** when you want OpenAI's latest models, built-in guardrails, native handoffs, and a lighter runtime that fits inside any existing application.
+
+*Sources: [github.com/openai/openai-agents-python](https://github.com/openai/openai-agents-python) · [TechCrunch](https://techcrunch.com/2026/04/15/openai-updates-its-agents-sdk-to-help-enterprises-build-safer-more-capable-agents/) · [openai.github.io/openai-agents-python](https://openai.github.io/openai-agents-python/)*
