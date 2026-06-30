@@ -1,7 +1,7 @@
 # NanoClaw vs Claude Agent SDK (Anthropic raw SDK)
 
 > **Type:** Opinionated harness vs raw SDK — both built on the same foundation
-> **Source:** [github.com/anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) · [sdk.anthropic.com](https://sdk.anthropic.com)
+> **Source:** [github.com/anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) · [github.com/anthropics/anthropic-sdk-typescript](https://github.com/anthropics/anthropic-sdk-typescript) · [sdk.anthropic.com](https://sdk.anthropic.com)
 
 ---
 
@@ -51,4 +51,4 @@ The Anthropic Claude Agent SDK is the official library for building agents that 
 
 **NanoClaw** when you want a working proactive agent with UI, memory, and credential handling in minutes and are happy with Telegram + Docker as the runtime. **Raw Claude Agent SDK** when you need maximum flexibility, lower overhead, easier testability, or a custom UI/persistence layer — and are prepared to build those pieces yourself.
 
-*Sources: [github.com/anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) · [docs.anthropic.com](https://docs.anthropic.com/claude/docs/agents) · [morphllm.com](https://www.morphllm.com/ai-agent-framework)*
+*Sources: [github.com/anthropics/anthropic-sdk-python](https://github.com/anthropics/anthropic-sdk-python) · [github.com/anthropics/anthropic-sdk-typescript](https://github.com/anthropics/anthropic-sdk-typescript) · [docs.anthropic.com](https://docs.anthropic.com/claude/docs/agents) · [morphllm.com](https://www.morphllm.com/ai-agent-framework)*
